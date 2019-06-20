@@ -11,7 +11,7 @@ function setup() {
   modulusSlider = createSlider(10, 300, 200);
   modulusSlider.position(menuLocation.x, menuLocation.y);
 
-  multiplierSlider = createSlider(0, 100, 12);
+  multiplierSlider = createSlider(0, 100, 2);
   multiplierSlider.position(menuLocation.x, menuLocation.y + 25);
 }
 
@@ -39,9 +39,13 @@ function getCirclePoints(multiplier, modulus) {
 }
 
 function drawCirclePoints(points) {
+  push();
+  stroke(255, 0, 0);
+  fill(255, 0, 0);
   points.forEach(function(point) {
     circle(point.x, point.y, 1);
   });
+  pop();
 }
 
 function drawConnections(points, multiplier, modulus) {
